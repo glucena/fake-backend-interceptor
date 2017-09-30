@@ -22,7 +22,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
    intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
       if (request.url.endsWith('/users') && request.method === 'GET' && request.params.get('mock')) {
-         console.log('HTTP REQEST INTERCEPTED BY THE MOCKED BACKEND');
+         console.log('HTTP REQUEST INTERCEPTED BY THE MOCKED BACKEND');
          request = request.clone({
             url: '/assets/json/users.json'
          });
